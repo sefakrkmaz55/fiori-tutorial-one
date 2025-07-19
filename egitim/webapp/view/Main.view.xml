@@ -1,0 +1,64 @@
+<mvc:View controllerName="com.mm.egitim.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <!-- İsim ve Soyisim Alanı -->
+                <HBox alignItems="Center" class="sapUiTinyMarginBottom">
+                    <Label text="{i18n>nameSurname}" required="true" class="sapUiTinyMarginEnd" width="150px"/>
+                    <Input id="firstName" placeholder="{i18n>firstName}" class="sapUiTinyMarginEnd" width="200px"/>
+                    <Input id="lastName" placeholder="{i18n>lastName}" class="sapUiTinyMarginEnd" width="200px"/>
+                    <core:Icon src="sap-icon://employee" size="1.5rem" color="#007cc0"/>
+                </HBox>
+                
+                <!-- Departman Alanı -->
+                <HBox alignItems="Center" class="sapUiTinyMarginBottom">
+                    <Label text="{i18n>department}" class="sapUiTinyMarginEnd" width="150px"/>
+                    <Input id="department" placeholder="{i18n>departmentPlaceholder}" class="sapUiTinyMarginEnd" width="400px"/>
+                    <core:Icon src="sap-icon://building" size="1.5rem" color="#007cc0"/>
+                </HBox>
+                
+                <!-- Telefon Alanı -->
+                <HBox alignItems="Center" class="sapUiTinyMarginBottom">
+                    <Label text="{i18n>phone}" class="sapUiTinyMarginEnd" width="150px"/>
+                    <Input id="phone" class="sapUiTinyMarginEnd" width="400px"/>
+                    <core:Icon src="sap-icon://phone" size="1.5rem" color="#007cc0"/>
+                </HBox>
+                
+                <!-- Email Alanı -->
+                <HBox alignItems="Center" class="sapUiTinyMarginBottom">
+                    <Label text="{i18n>email}" class="sapUiTinyMarginEnd" width="150px"/>
+                    <Input id="email" class="sapUiTinyMarginEnd" width="400px"/>
+                    <core:Icon src="sap-icon://email" size="1.5rem" color="#007cc0"/>
+                </HBox>
+                
+                <!-- Butonlar -->
+                <HBox class="sapUiMediumMarginTop">
+                    <Button text="{i18n>addPersonnel}" 
+                            icon="sap-icon://add-employee" 
+                            type="Accept" 
+                            press="onAddPersonnel"
+                            class="sapUiTinyMarginEnd"/>
+                    <Button text="{i18n>clear}" 
+                            type="Reject" 
+                            press="onClear"
+                            class="sapUiTinyMarginEnd"/>
+                </HBox>
+                
+                <Button text="{i18n>showInPopup}" 
+                        type="Emphasized" 
+                        press="onShowInPopup"
+                        class="sapUiMediumMarginTop"/>
+                
+                <!-- Sonuç Alanı -->
+                <VBox id="resultArea" class="sapUiMediumMarginTop" visible="false">
+                    <Label text="{i18n>enteredData}" class="sapUiTinyMarginBottom"/>
+                    <Text id="resultText" class="sapUiTinyMarginBottom"/>
+                </VBox>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
